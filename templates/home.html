@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href={% static 'css/style.css' %}>
+  </head>
+  <body background={% static 'image/wheat.jpg' %}>
+    <div class="nav">
+      <div class="header">
+        <h1>Crop Yield Prediction</h1>
+      </div>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'graph' %}">Graphs</a></li>
+          <li><a href="{% url 'about' %}">About Us</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <main class="forms">
+      <div class="form2">
+        <form class="form12" method="POST" action={% url 'predict' %}>
+          {% csrf_token %}
+          <h2>CropYield Prediction</h2>
+
+          <label for="state">Select your Country:</label><br />
+          <select name="state" id="state" required>
+            <option value="" selected disabled>Select your Country</option>
+            <option value="Albania">Albania</option>
+            <option value="Algeria">Algeria</option>
+            <option value="Angola">Angola</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Armenia">Armenia</option>
+            <option value="Australia">Australia</option>
+            <option value="Austria">Austria</option>
+            <option value="Azerbaijan">Azerbaijan</option>
+            <option value="Bahamas">Bahamas</option>
+            <option value="Bahrain">Bahrain</option>
+            <option value="Bangladesh">Bangladesh</option>
+            <option value="Belarus">Belarus</option>
+            <option value="Belgium">Belgium</option>
+            <option value="Botswana">Botswana</option>
+            <option value="Brazil">Brazil</option>
+            <option value="Bulgaria">Bulgaria</option>
+            <option value="Burkina Faso">Burkina Faso</option>
+            <option value="Burundi">Burundi</option>
+            <option value="Cameroon">Cameroon</option>
+            <option value="Canada">Canada</option>
+            <option value="Central African Republic">
+              Central African Republic
+            </option>
+            <option value="Chile">Chile</option>
+            <option value="Colombia">Colombia</option>
+            <option value="Croatia">Croatia</option>
+            <option value="Denmark">Denmark</option>
+            <option value="Dominican Republic">Dominican Republic</option>
+            <option value="Ecuador">Ecuador</option>
+            <option value="Egypt">Egypt</option>
+            <option value="El Salvador">El Salvador</option>
+            <option value="Eritrea">Eritrea</option>
+            <option value="Estonia">Estonia</option>
+            <option value="Finland">Finland</option>
+            <option value="France">France</option>
+            <option value="Germany">Germany</option>
+            <option value="Ghana">Ghana</option>
+            <option value="Greece">Greece</option>
+            <option value="Guatemala">Guatemala</option>
+            <option value="Guinea">Guinea</option>
+            <option value="Guyana">Guyana</option>
+            <option value="Haiti">Haiti</option>
+            <option value="Honduras">Honduras</option>
+            <option value="Hungary">Hungary</option>
+            <option value="India">India</option>
+            <option value="Indonesia">Indonesia</option>
+            <option value="Iraq">Iraq</option>
+            <option value="Ireland">Ireland</option>
+            <option value="Italy">Italy</option>
+            <option value="Jamaica">Jamaica</option>
+            <option value="Japan">Japan</option>
+            <option value="Kazakhstan">Kazakhstan</option>
+            <option value="Kenya">Kenya</option>
+            <option value="Latvia">Latvia</option>
+            <option value="Lebanon">Lebanon</option>
+            <option value="Lesotho">Lesotho</option>
+            <option value="Libya">Libya</option>
+          </select>
+          <br />
+
+          <label for="season">Enter your Temperature:</label><br />
+          <input type="text" name="season" id="season" required />
+
+          <br />
+
+          <label for="crop">Select your Crop:</label><br />
+          <select name="crop" id="crop" required>
+            <option value="" selected disabled>Select your crop</option>
+            <option value="Maize">Maize</option>
+            <option value="Potatoes">Potatoes</option>
+            <option value="Rice, paddy">Rice, paddy</option>
+            <option value="Sorghum">Sorghum</option>
+            <option value="Soybeans">Soybeans</option>
+            <option value="Wheat">Wheat</option>
+            <option value="Cassava">Cassava</option>
+            <option value="Sweet potatoes">Sweet potatoes</option>
+            <option value="Plantains and others">Plantains and others</option>
+            <option value="Yams">Yams</option>
+          </select>
+          <br />
+          <label for="pesticides">Enter your pesticides:</label><br />
+          <input type="text" name="pesticides" id="pesticides" required />
+          <br />
+
+          <label for="Rainfall">Enter your Rainfall:</label><br />
+          <input type="text" name="rainfall" id="Rainfall" required />
+          <br />
+          <input
+            type="submit"
+            class="but"
+            value="Submit"
+          />
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

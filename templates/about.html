@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href= {% static 'css/style.css' %} />
+  </head>
+  <body background={% static 'image/background.jpg' %}>
+    <div class="nav">
+      <div class="header">
+        <h1>Crop Yield prediction</h1>
+      </div>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'graph' %}">Graphs</a></li>
+          <li><a href="{% url 'about' %}">About Us</a></li>
+        </ul>
+      </nav>
+    </div>
+    <main class="forms">
+        <div class="form2" style="word-wrap: break-word;">
+            <h2>About Us</h2>
+        <p class="form5">
+            Our platform utilizes machine learning to help farmers plan their grain harvest 
+            and sales effectively. By analyzing location and meteorological data, 
+            we provide accurate crop predictions for specific regions and harvest seasons across the nation. Our goal is to increase yield projections' accuracy, 
+            enabling farmers to make informed decisions and optimize their crop management for maximum profitability. We believe that integrating machine learning 
+            into agriculture promotes productivity and environmental sustainability, ensuring the nation's food security. Join us on this transformative journey to 
+            revolutionize farming and empower farmers.   
+        </p>  
+        <br><br>
+        <p>Sahil Tyagi</p>
+        <p>IT</p> 
+        <br><br>
+        <p>Prashant Goswami</p>
+        <p>IT</p> 
+        <br><br>
+        <p>Pranay Sharma</p>
+        <p>IT</p> 
+        <br><br>
+        <p>Prajjwal Tiwari</p>
+        <p>IT</p> 
+        </div>
+        </main>
+  </body>
+</html>

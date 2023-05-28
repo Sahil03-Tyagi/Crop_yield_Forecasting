@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href= {% static 'css/style.css' %} />
+  </head>
+  <body background={% static 'image/background.jpg' %}>
+    <div class="nav">
+      <div class="header">
+        <h1>Crop Yield Prediction</h1>
+      </div>
+      <nav>
+        <ul class="nav-list">
+            <li><a href="{% url 'home' %}">Home</a> </li>
+            <li><a href="{% url 'graph' %}">Graphs</a> </li>
+            <li><a href="{% url 'about' %}">About Us</a></li>                
+        </ul>
+    </nav>
+    </div>
+
+    <main class="forms">
+      <div class="form3">
+        <form class="form122" action="">
+          <h1>Predicted Yield</h1>
+          <br />
+          <br />
+          <h2 id="message" rows="3" cols="30" style="text-align: center; color: red;" ;>{{result}} Hg/Ha Yield</h2>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
